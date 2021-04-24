@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  function Person() {
+  }
+  Person.prototype.name="小米";
+  Person.prototype.sex="女";
+  Person.prototype.age=18;
+  Person.prototype.height="180cm";
+  Person.prototype.eat=function () {
+    console.log("哈哈，我喜欢吃榴莲拌臭豆腐");
+  };
+  var Student={};
+
+  for (var key in Person.prototype){
+    Student[key]=Person.prototype[key];
+  }
+  console.log(Student.name,Student.sex,Student.age,Student.height);
+  Student.eat();
+
+</script>
+</html>

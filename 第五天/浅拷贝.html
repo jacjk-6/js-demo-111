@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+    <script>
+      var Obj1={
+        age:10,
+        sex:"男",
+        color:"黄色"
+      };
+      var Obj2={};
+      function instend(a,b) {
+        for(var key in a){
+          b[key]=a[key];
+        }
+      }
+      instend(Obj1,Obj2);
+      console.dir(Obj1);
+      console.dir(Obj2);
+
+    </script>
+</body>
+</html>

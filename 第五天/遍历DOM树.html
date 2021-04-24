@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+    <p>花都</p>
+    <p>花都</p>
+    <p>花都</p>
+    <ul>
+        <li>
+            <a href="#">
+                <img src="#" alt="">
+            </a>
+        </li>
+    </ul>
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+            var root=document.documentElement;//html
+        function getDom(root) {
+            f1(root);
+            var child=root.children;
+            forChildren(child);
+        }
+       function f1(node) {
+           console.log(node.nodeName);
+       }
+        function forChildren(children) {
+            for (var i=0;i<children.length;i++){
+                var child=children[i];
+                f1(child);
+                child.children&&getDom(child);
+            }
+        }
+        getDom(root);
+
+    </script>
+</body>
+</html>

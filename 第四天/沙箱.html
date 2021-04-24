@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+    //沙箱：虚拟环境，不影响外部环境
+    //沙箱就是自调用函数
+    (function () {
+        var num=10;
+        console.log(num+30);
+    })();
+    var num =50;
+    console.log(num);
+</script>
+</body>
+</html>

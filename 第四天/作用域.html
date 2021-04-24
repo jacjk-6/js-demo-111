@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .img{
+      width: 1157px;
+      height: 518px;
+      background-color: pink;
+    }
+  </style>
+  <script>
+    //变量：局部变两个和全局变量
+    //作用域：局部作用域和全局作用域
+    //js中没有块级做作用域
+    //函数中定义的变量是局部变量
+    //作用域链：变量的使用，从里边到外边层层搜索，搜索到了就可以直接使用了
+
+    var num=10;//级别1
+    function f1() {
+      var num=20;//级别2
+      function f2() {
+        var num=30;//级别3
+        console.log(num);
+      }
+
+      f2();
+    }
+    f1();
+    //预解析：就是在浏览器解析代码之前，把变脸的声明和函数的声明提前到该作用域
+
+  </script>
+</head>
+<body>
+<div class="img"></div>
+</body>
+</html>

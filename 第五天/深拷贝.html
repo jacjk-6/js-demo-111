@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+    //深拷贝
+  var Obj1={
+    age:10,
+    name:"小黄",
+    car:["宝马","长安","比亚迪"],
+    dog:{
+      name:"大黄",
+      age:15,
+      sex:"母的"
+    }
+  };
+    var Obj2={};
+      function extend(a,b) {
+        for (var key in a){
+          var item=a[key];
+          if(item instanceof Array){
+            b[key]=[];
+            extend(item,b[key]);
+          }else if(item instanceof Object){
+            b[key]={};
+            extend(item,b[key]);
+          }else {
+                b[key]=item;
+          }
+        }
+      }
+        extend(Obj1,Obj2);
+    console.dir(Obj1);
+    console.dir(Obj2);
+
+
+</script>
+
+</body>
+</html>

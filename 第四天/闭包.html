@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+    //闭包两种模式
+  //函数闭包、对象模式
+      //函数嵌套
+//  function f1() {
+//    var num=1;
+//    function f2() {
+//      console.log(num);
+//    }
+//    f2();
+//  }
+        //对象
+    function f1() {
+        var num=12;
+        var obj={
+           age:num
+        };
+        console.log(obj.age);
+    }
+    f1();
+
+</script>
+</body>
+</html>

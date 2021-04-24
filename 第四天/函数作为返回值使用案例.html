@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+//    function f1() {
+//        console.log("函数f1开始");
+//        return function () {
+//            console.log("是函数，但是此时是作为返回值使用的");
+//        };
+//
+//    }
+//    var ff=f1();
+//    ff();
+
+//   var arr=[];
+//    var date=new Date();
+//    var num=10;
+//    var hua="花";
+//    console.log(Object.prototype.toString.call(arr));
+//    console.log(Object.prototype.toString.call(date));
+//    console.log(Object.prototype.toString.call(num));
+//    console.log(Object.prototype.toString.call(hua));
+
+    function getFun(type) {
+        return function (obj) {
+            return Object.prototype.toString.call(obj)===type;
+        }
+    }
+        var fff=getFun("[object Array]");
+        var result=fff([1,2,3]);
+            console.log(result);
+
+</script>
+</html>

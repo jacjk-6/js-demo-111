@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            width: 200px;
+            height: 25px;
+        }
+
+        .qd {
+            display: block;
+            font-style: normal;
+            width: 50px;
+            float: left;
+            margin-left: 40px;
+            color: #aaaaaa
+        }
+
+        .rqd {
+            display: block;
+            font-style: normal;
+            width: 50px;
+            float: left;
+            margin-left: 40px;
+            color: red;
+        }
+
+        .zqd {
+            display: block;
+            font-style: normal;
+            width: 50px;
+            float: left;
+            margin-left: 40px;
+            color: coral;
+        }
+
+        .qqd {
+            display: block;
+            font-style: normal;
+            width: 50px;
+            float: left;
+            margin-left: 40px;
+            color: greenyellow;
+        }
+
+        .alx {
+            display: none;
+        }
+
+        .alert {
+            display: inline-block;
+            color: red;
+        }
+
+        .miMaBj {
+            width: 80px;
+            float: left;
+            height: 10px;
+            margin-left: 10px;
+            background-color: #eeeeee;
+        }
+
+        .rbj {
+            width: 80px;
+            float: left;
+            height: 10px;
+            margin-left: 10px;
+            background-color: red;
+        }
+
+        .zbj {
+            width: 80px;
+            float: left;
+            height: 10px;
+            margin-left: 10px;
+            background-color: coral;
+        }
+
+        .qbj {
+            width: 80px;
+            float: left;
+            height: 10px;
+            margin-left: 10px;
+            background-color: greenyellow;
+        }
+
+    </style>
+</head>
+<body>
+<span>密码：</span><input type="text" id="password">
+<br>
+<span>密码强度：</span><span class="alert" id="al">请输入至少6位密码*</span><br>
+<i class="qd" id="rd">弱</i>
+<i class="qd" id="zd">中</i>
+<i class="qd" id="qd">强</i>
+<br>
+<div class="miMaBj" id="_rbj"></div>
+<div class="miMaBj" id="_zbj"></div>
+<div class="miMaBj" id="_qbj"></div>
+<script>
+    var inp = document.getElementById("password");
+    /*
+     * 密码强度：
+     * 必须大于等于6位，否则提示至少输入6位密码
+     * 只有数字====弱
+     * 有数字和字母=====中
+     * 有数字字母和特殊字符=====强
+     * */
+    inp.onkeyup = function() {
+
+
+        if (this.value.length < 6) {
+            document.getElementById("al").className = "alert";
+            document.getElementById("rd").className ="qd";
+            document.getElementById("_rbj").className ="miMaBj";
+            document.getElementById("zd").className ="qd";
+            document.getElementById("_zbj").className ="miMaBj";
+            document.getElementById("qd").className ="qd";
+            document.getElementById("_qbj").className ="miMaBj";
+        } else {
+            document.getElementById("al").className = "alx";
+            if (/[0-9]/.test(this.value)){
+                document.getElementById("rd").className = "rqd";
+                document.getElementById("_rbj").className = "rbj";
+            }else {
+                document.getElementById("rd").className ="qd";
+                document.getElementById("_rbj").className ="miMaBj";
+            }
+            if (/[a-zA-Z_]/.test(this.value)) {
+                document.getElementById("zd").className = "zqd";
+                document.getElementById("_zbj").className = "zbj";
+            }
+            else {
+                document.getElementById("zd").className ="qd";
+                document.getElementById("_zbj").className ="miMaBj";
+            }
+            if(/[^0-9a-zA-Z_]/.test(this.value)){
+                document.getElementById("qd").className = "qqd";
+                document.getElementById("_qbj").className = "qbj";
+            }else {
+                document.getElementById("qd").className ="qd";
+                document.getElementById("_qbj").className ="miMaBj";
+            }
+        }
+
+    };
+
+</script>
+</body>
+</html>

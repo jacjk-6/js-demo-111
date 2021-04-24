@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  //动物对象
+  function anmal(height,weight,sex) {
+    this.height=height;
+    this.weight=weight;
+    this.sex=sex;
+  }
+  //动物原型方法
+  anmal.prototype.eat=function () {
+    console.log("哈哈动物就应该吃东西");
+  };
+  //小狗对象
+  function dog(color) {
+    this.color=color;
+  }
+  //小狗原型方法
+  dog.prototype=new anmal("50cm","30kg","公的");
+  dog.prototype.play=function () {
+    console.log("哈哈，··旺旺汪汪");
+  };
+  //二哈对象
+  function ErHa(name) {
+    this.name=name;
+  }
+  //二哈原型方法
+  ErHa.prototype=new dog("白色的");
+
+
+  var Erha=new ErHa("小小狗");
+  console.log(Erha.name+","+Erha.sex+","+Erha.weight+","+Erha.color+","+Erha.height);
+  Erha.eat();
+  Erha.play();
+
+</script>
+</html>
